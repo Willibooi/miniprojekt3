@@ -59,7 +59,7 @@ public class ShapeContainer extends JPanel implements Pointable
     {
     if (mode == Mode.INSERT)
       {
-      shapes.add(new Circle(point, Math.random() * 50.0));
+      shapes.add(new Circle(point, Math.random() * 50.0+50));
       repaint(); // uppmanar swing att måla om
       }
     else if (mode == Mode.MOVE)
