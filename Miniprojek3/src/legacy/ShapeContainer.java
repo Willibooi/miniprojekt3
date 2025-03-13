@@ -62,9 +62,9 @@ public class ShapeContainer extends JPanel implements Pointable {
 
 	public void pointerDown(Point point) {
 		this.point = point;
+		select(point);
 		state.handle(this);
 		repaint();
-		
 	}
 
 	public void pointerUp(Point point) {
@@ -72,10 +72,8 @@ public class ShapeContainer extends JPanel implements Pointable {
 	}
 
 	public void pointerMoved(Point point, boolean pointerDown) {
-		
 		if (selected != null && pointerDown) {
 			this.point = point;
-			select(point);
 			state.handle(this);
 			repaint();
 		}

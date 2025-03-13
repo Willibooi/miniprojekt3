@@ -7,6 +7,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import shapeState.CircleState;
+import shapeState.RectState;
 import state.DeleteState;
 import state.InsertState;
 import state.MarkState;
@@ -36,8 +38,12 @@ public class ShapeApp extends JFrame
     createMenuItem(menu, "Mark", e -> shapeContainer.setState(new MarkState()));
     createMenuItem(menu, "Unmark", e -> shapeContainer.setState(new UnmarkState()));
     createMenuItem(menu, "Resize", e -> shapeContainer.setState(new ResizeState()));
+    JMenu shapesMenu = new JMenu("Shapes");
+    createMenuItem(shapesMenu, "Circle", e -> shapeContainer.setShapeState(new CircleState()));
+    createMenuItem(shapesMenu, "Rectangle", e -> shapeContainer.setShapeState(new RectState()));
     JMenuBar menuBar = new JMenuBar();
     menuBar.add(menu);
+    menuBar.add(shapesMenu);
     this.setJMenuBar(menuBar);
     }
   
