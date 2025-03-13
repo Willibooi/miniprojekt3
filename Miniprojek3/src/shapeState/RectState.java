@@ -2,6 +2,7 @@ package shapeState;
 
 
 import legacy.Point;
+import legacy.Rectangle;
 import legacy.Shape;
 
 
