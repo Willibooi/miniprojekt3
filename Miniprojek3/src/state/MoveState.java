@@ -6,8 +6,9 @@ public class MoveState implements State {
 
 	@Override
 	public void handle(ShapeContainer shapeContainer) {
-		shapeContainer.getSelected().moveTo(shapeContainer.getPoint());
-
+		if(shapeContainer.getSelected() != null) {
+			shapeContainer.getSelected().moveTo(shapeContainer.getPoint());
+		}
 	}
 
 }

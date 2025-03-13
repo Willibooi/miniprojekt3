@@ -6,7 +6,9 @@ public class ResizeState implements State {
 
 	@Override
 	public void handle(ShapeContainer shapeContainer) {
-		shapeContainer.getSelected().resizeTo(shapeContainer.getPoint());
+		if(shapeContainer.getSelected() != null) {
+			shapeContainer.getSelected().resizeTo(shapeContainer.getPoint());
+		}
 	}
 
 }
