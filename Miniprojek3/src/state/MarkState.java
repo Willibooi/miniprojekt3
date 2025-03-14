@@ -13,6 +13,7 @@ public class MarkState implements State {
 			shapeContainer.getShapes().remove(shapeContainer.getSelected());
 			shapeContainer.getShapes().add(new ShapeCrosshairDecorator(shapeContainer.getSelected()));
 		}
+		shapeContainer.setSelected(null);
 	}
 
 }
