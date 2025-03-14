@@ -7,6 +7,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import decoratorState.CrosshairState;
+import decoratorState.FillState;
 import shapeState.CircleState;
 import shapeState.RectState;
 import state.DeleteState;
@@ -41,9 +43,13 @@ public class ShapeApp extends JFrame
     JMenu shapesMenu = new JMenu("Shapes");
     createMenuItem(shapesMenu, "Circle", e -> shapeContainer.setShapeState(new CircleState()));
     createMenuItem(shapesMenu, "Rectangle", e -> shapeContainer.setShapeState(new RectState()));
+    JMenu decoratorMenu = new JMenu("Decorations");
+    createMenuItem(decoratorMenu, "CrossHair", e -> shapeContainer.setDecoratorState(new CrosshairState()));
+    createMenuItem(decoratorMenu, "Fill", e -> shapeContainer.setDecoratorState(new FillState()));
     JMenuBar menuBar = new JMenuBar();
     menuBar.add(menu);
     menuBar.add(shapesMenu);
+    menuBar.add(decoratorMenu);
     this.setJMenuBar(menuBar);
     }
   

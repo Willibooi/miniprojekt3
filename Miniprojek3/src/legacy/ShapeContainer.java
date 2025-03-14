@@ -11,6 +11,7 @@ import shapeState.CircleState;
 import shapeState.ShapeState;
 import state.InsertState;
 import state.State;
+import decoratorState.*;
 
 public class ShapeContainer extends JPanel implements Pointable {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +28,11 @@ public class ShapeContainer extends JPanel implements Pointable {
 	private State state = new InsertState();
 	private ShapeState shapeState = new CircleState();
 	private Shape selected;
+	private DecoratorState decoratorState = new FillState();
+
+	public void setDecoratorState(DecoratorState decoratorState) {
+		this.decoratorState = decoratorState;
+	}
 
 	public Shape getSelected() {
 		return selected;
@@ -99,6 +105,10 @@ public class ShapeContainer extends JPanel implements Pointable {
 
 	public void setPoint(Point point) {
 		this.point = point;
+	}
+
+	public DecoratorState getDecoratorState() {
+		return this.decoratorState;
 	}
 
 }
