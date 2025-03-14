@@ -10,7 +10,7 @@ public class DeleteState implements State {
 		if(shapeContainer.getSelected() != null) {
 			shapeContainer.getShapes().remove(shapeContainer.getSelected());
 		}
-		
+		shapeContainer.setSelected(null);
 	}
 
 }
