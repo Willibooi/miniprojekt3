@@ -23,6 +23,12 @@ public class Rectangle implements Shape {
     {
     g.drawRect((int)(center.getX()-w/2), (int)(center.getY()-h/2), (int)w, (int)h);
     }
+  
+  @Override
+  public void fill(Graphics g)
+    {
+    g.fillRect((int)(center.getX()-w/2), (int)(center.getY()-h/2), (int)w, (int)h);
+    }
 
   @Override
   public Point getPosition()

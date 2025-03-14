@@ -1,5 +1,6 @@
 package legacy;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class ShapeDecorator implements Shape
@@ -12,12 +13,22 @@ public class ShapeDecorator implements Shape
   @Override
   public void draw(Graphics g)
     {
+ 	g.setColor(new Color(0,0,0));
     decoratee.draw(g);
+    fill(g);
+    /*
     Point position = decoratee.getPosition();
     int x = (int)(position.getX()-decoratee.getWidth()/2.0+0.5);
     int y = (int)(position.getY()-decoratee.getHeight()/2.0+0.5);
-    g.fillOval(x,y,(int)(decoratee.getWidth()+0.5),(int)(decoratee.getHeight()+0.5));
+    g.fillOval(x,y,(int)(decoratee.getWidth()+0.5),(int)(decoratee.getHeight()+0.5));*/
     }
+  
+  @Override
+  public void fill(Graphics g)
+    {
+    decoratee.fill(g);
+    }
+  
   @Override
   public Point getPosition()
     {

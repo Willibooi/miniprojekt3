@@ -12,6 +12,7 @@ public class ShapeCrosshairDecorator implements Shape {
 
 	@Override
 	public void draw(Graphics g) {
+		g.setColor(new Color(0,0,0));
 		decoratee.draw(g);
 		Point position = decoratee.getPosition();
 		int x = (int) (position.getX() + 0.5);
@@ -24,6 +25,11 @@ public class ShapeCrosshairDecorator implements Shape {
 				(int) (x), (int) (y + decoratee.getHeight() / 2));
 		g.setColor(new Color(0,0,0));
 		//g.drawLine(x - 1, y - 5, 2, 10);
+	}
+	
+	@Override
+	public void fill(Graphics g) {
+		decoratee.fill(g);
 	}
 
 	@Override

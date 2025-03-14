@@ -23,6 +23,12 @@ public class Circle implements Shape
     {
     g.drawOval((int)(0.5+center.getX()-r), (int)(0.5+center.getY()-r), (int)(0.5+2*r), (int)(0.5+2*r));
     }
+  
+  @Override
+  public void fill(Graphics g)
+    {
+    g.fillOval((int)(0.5+center.getX()-r), (int)(0.5+center.getY()-r), (int)(0.5+2*r), (int)(0.5+2*r));
+    }
 
   @Override
   public Point getPosition()

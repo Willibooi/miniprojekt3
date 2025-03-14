@@ -8,7 +8,7 @@ public class CircleState implements ShapeState {
 
 	@Override
 	public Shape getShape(Point point) {
-		return new Circle(point, Math.random() * 50.0);
+		return new Circle(point, Math.random() * 25.0+25);
 	}
 
 }
